@@ -3,10 +3,29 @@ body {
 	
 }
 
+.clearfix {
+	clear: both;
+}
+
+h1 {
+	font-size: 4em;
+	text-align: center;
+	margin-top: 40px;
+	font-family: calibri, sans-serif;
+	color: #747589;
+	text-shadow: 0 0 2px #cc181e;
+}
+
+h1 i {
+	color: #CC181E;
+	text-shadow: none;
+	
+}
+
 .container {
 	width: 80%;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 .left-container {
@@ -113,7 +132,7 @@ body {
 	box-shadow: 0 0 5px #444559;
 }
 
-.results:hover {
+#forward:hover, #backward:hover, .results:hover {
 	box-shadow: 0 0 15px #444559;
 }
 
@@ -135,3 +154,27 @@ body {
 
 }
 
+.controls {
+	position: relative;
+	z-index: 999;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 73px;
+}
+
+#forward, #backward {	
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;	
+	border-radius: 10px;
+	border: 1px solid #47485d;
+	box-shadow: 0 0 5px #444559;
+}
+
+#forward {
+	float: right;
+}
+
+#backward {
+	float: left;
+}

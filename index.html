@@ -7,8 +7,10 @@
 	<script src="apps/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
+	<h1>Dominofoe's <i class="fa fa-youtube-square"></i> Search Engine</h1>
 	<div class="container">
 		<div class="left-container">
 			<form id="search">
@@ -20,6 +22,11 @@
 		</div>
 		<div class="right-container">
 			<div class="resultsbox"><div id="search-results"></div></div>
+			<div class="clearfix"></div>
+			<div class="controls">
+				<button id="forward" disabled=true><i class="fa fa-arrow-circle-right"></i></button>
+				<button id="backward" disabled=true><i class="fa fa-arrow-circle-left"></i></button>
+			</div>
 		</div>
 	</div>
 </body>

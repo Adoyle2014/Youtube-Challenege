@@ -2,12 +2,13 @@ $(document).ready(function() {
 
 
 	ajaxLesson();
+
 	
 
 	function ajaxLesson() {
 		userQuery = "";
-
-		
+		dataReturn = {};
+		currentPage = 1
 
 		$("#button").on('click', function(e) {
 			e.preventDefault();
@@ -15,6 +16,22 @@ $(document).ready(function() {
 			getRequest(searchTerm);
 
 		});
+
+		$("#forward").on('click', function() {
+			
+			currentPage++;
+			showResults(dataReturn, currentPage);
+
+		})
+
+		$("#backward").on('click', function() {
+			
+			currentPage--;
+			showResults(dataReturn, currentPage);
+
+		})
+
+		
 
 		function getRequest(searchTerm){
 	  		var params = {
@@ -27,7 +44,8 @@ $(document).ready(function() {
 
 			$.getJSON(url, params, function(data){
 				console.log(data);
-				showResults(data);
+				dataReturn = data;
+				showResults(data, currentPage);
 
 			});
 		}
@@ -44,16 +62,31 @@ $(document).ready(function() {
     			$('#search-results').html(html);
   		}*/
 
-  		function showResults(results){
+  		function showResults(results, page){
     			var html = "";
     			var utubeVideoUrl = "https://www.youtube.com/watch?v=";
-    			
+    			var itemsPerPage = 5;
+    			console.log(page);
 	    		
-	    		for (i = 0; i < 5; i++) {
-	    			var titleTag = ('<div class="results"><a href="' + utubeVideoUrl + (results.items[i]).id.videoId + '" target="_blank"><p class="result-title">' + (results.items[i]).snippet.title + '</p><img class="result-image" src="' + (results.items[i]).snippet.thumbnails.default.url + '"></a></div>')	
-	    			html += titleTag;	      		
+
+	    		for(i=itemsPerPage*(page-1);i<(itemsPerPage*page);i++){
+	    			if (i < (results.items.length)-1) {
+	    				if (page > 1) {
+	    					$("#forward").prop("disabled", false);
+		    				$("#backward").prop("disabled", false);
+			    			var titleTag = ('<div class="results"><a href="' + utubeVideoUrl + (results.items[i]).id.videoId + '" target="_blank"><p class="result-title">' + (results.items[i]).snippet.title + '</p><img class="result-image" src="' + (results.items[i]).snippet.thumbnails.default.url + '"></a></div>')	
+			    			html += titleTag;	     
+		    			}else{
+		    				$("#forward").prop("disabled", false);
+		    				$("#backward").prop("disabled", true);
+		    				var titleTag = ('<div class="results"><a href="' + utubeVideoUrl + (results.items[i]).id.videoId + '" target="_blank"><p class="result-title">' + (results.items[i]).snippet.title + '</p><img class="result-image" src="' + (results.items[i]).snippet.thumbnails.default.url + '"></a></div>')	
+			    			html += titleTag;	     
+		    			}	    				
+	    			}else{
+	    				$("#forward").prop("disabled", true);
+	    			}	    					
 	    		}
-    			$('#search-results').html(html);
+    			$('#search-results').html(html);    			
   		}
 	}
 });
