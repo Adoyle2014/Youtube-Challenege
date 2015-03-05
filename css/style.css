@@ -1,0 +1,137 @@
+body {
+	background-color: #bbbbbb;
+	
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+.left-container {
+	float: left;
+	width: 25%;
+	height: 800px;
+	background-color: #747589;
+	border-radius: 10px;
+	border: 1px solid #47485d;
+}
+
+.right-container {
+	float: right;
+	width: 70%;
+	height: 800px;
+	background-color: #747589;
+	margin: 0 auto;
+	border-radius: 10px;
+	border: 1px solid #47485d;
+}
+
+#search {		
+	text-align: center;
+	width: 80%;
+	height: 20%;
+	background-color: #f4f4f4;
+	margin: 0 auto;
+	margin-top: 60px;	
+	color: #777777;
+	border-radius: 10px;
+	border: 1px solid #47485d;
+
+}
+
+.optionbox {
+	text-align: center;
+	width: 80%;
+	height: 60%;
+	background-color: #f4f4f4;
+	margin: 0 auto;
+	margin-top: 35px;	
+	color: #777777;
+	border-radius: 10px;
+	border: 1px solid #47485d;
+}
+#query {
+	margin-top: 30px;
+	width: 80%;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#button {
+	margin-top: 30px;
+	font-size: 1.3em;
+}
+
+.resultsbox {
+	width: 80%;
+	height: 80%;
+	margin: 0 auto;
+	background-color: #f4f4f4;
+	color: #777777;
+	padding: 20px;
+	border-radius: 10px;
+	border: 1px solid #47485d;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+  	
+}
+
+#search, .optionbox, .resultsbox {
+	box-shadow: 0 0 10px #f4f4f4, inset 0 0 20px #747589;
+	
+}
+
+#search-results {
+	width: 95%;
+	height: 95%;
+	margin: 0 auto;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+  	text-align: center;
+  	
+}
+
+#search-results a {
+	text-decoration: none;
+	
+}
+
+.results {
+	display: inline-block;
+	width: 90%;
+	height: 19%;
+	margin: 0 auto;
+	border: 1px solid #47485d;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 3px;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px #444559;
+}
+
+.results:hover {
+	box-shadow: 0 0 15px #444559;
+}
+
+.result-title {
+	float: left;
+	width: 73%;
+	color: #444559;
+	font-size: 1.2em;
+	margin-top: 30px;
+}
+
+.result-image {
+	float: right;
+	width: 20%;
+	max-height: 97%;
+	border-radius: 10px;
+	border: 1px solid #47485d;
+	
+
+}
+
